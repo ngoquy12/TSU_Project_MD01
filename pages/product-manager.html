@@ -3,9 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1>Trang quản lý sản phẩm</h1>
+    <div class="container">
+      <menu id="menu-component" class="menu">
+        <!-- Bây giờ trong HTML không cần có code fix cứng nữa, nó sẽ được load từ JS -->
+      </menu>
+      <div class="main">
+        <header class="header">
+          <span>Icon</span>
+          <span>Ảnh đại diện</span>
+        </header>
+        <main class="main-content">Quản lý sản phẩm</main>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="../js/menu.js"></script>
+
+    <!-- Gán phàn chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderMenu("product-manager");
+    </script>
   </body>
 </html>
