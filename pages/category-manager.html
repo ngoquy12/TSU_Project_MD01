@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý danh mục</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/category-manager.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -23,12 +24,89 @@
           <span>Icon</span>
           <span>Ảnh đại diện</span>
         </header>
-        <main class="main-content">Quản lý danh mục</main>
+        <main class="main-content">
+          <!-- Phần toolbar -->
+          <div class="toolbar">
+            <h3 class="title">Danh mục</h3>
+            <button onclick="handleShowModal()" class="button-add">
+              Thêm mới danh mục
+            </button>
+          </div>
+
+          <!-- Phần chức năng -->
+          <div class="function">
+            <select name="" id="">
+              <option value="">Đang hoạt động</option>
+              <option value="">Ngừng hoạt động</option>
+            </select>
+            <input type="search" />
+          </div>
+
+          <!-- Phần danh sách -->
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+
+          <!-- Phần phân trang -->
+          <div>
+            <button>Prev</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Next</button>
+          </div>
+        </main>
       </div>
     </div>
 
+    <!-- Modal thêm mới, cập nhật danh mục -->
+    <div class="overlay" style="display: none" id="form-add-category">
+      <form class="form" onsubmit="handleSubmit(event)">
+        <div class="form-header">
+          <h3 class="form-title">Thêm mới danh mục</h3>
+          <button onclick="handleCloseModal()" type="button" class="btn-close">
+            X
+          </button>
+        </div>
+        <div class="form-body">
+          <div class="form-group">
+            <label class="form-label" for="">Mã danh mục</label>
+            <input id="category-code" class="fomr-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tên danh mục</label>
+            <input id="category-name" class="fomr-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Trạng thái</label>
+            <input checked value="active" name="status" type="radio" /> Đang
+            hoạt động
+            <input value="inactive" name="status" type="radio" /> Ngừng hoạt
+            động
+          </div>
+        </div>
+        <div class="form-footer">
+          <button type="button" onclick="handleCloseModal()" class="btn">
+            Hủy
+          </button>
+          <button class="btn">Thêm</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal xác nhận xóa -->
+
     <!-- Script -->
     <script src="../js/menu.js"></script>
+    <script src="../js/category-manager.js"></script>
 
     <!-- Gán phàn chuỗi HTML vào component -->
     <script>

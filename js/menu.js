@@ -24,6 +24,7 @@ function renderMenu(keyActive) {
     },
   ];
 
+  // Nối các chuỗi HTML trong Menu
   let menuHTML = `
     <div class="logo-image">
           <img src="../public/images/logo.png" alt="" />
@@ -32,6 +33,7 @@ function renderMenu(keyActive) {
         <nav class="list-link">
   `;
 
+  // Nối chuỗi kèm theo xử lý logic và gán các dữ liệu động
   menuItems.forEach(function (item) {
     menuHTML += `
           <a href="${item.link}" class="link-item ${
